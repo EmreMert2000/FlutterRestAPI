@@ -8,9 +8,6 @@ void main() => runApp(MyApp());
 class MyApp extends StatelessWidget {
   MyApp({Key? key}) : super(key: key);
 
-  // WebSocketService, "S"ingle Responsibility prensibine uygun olarak
-  // sadece WebSocket ile ilgili işlemleri barındırır.
-  // Uygulama genelinde kullanmak istediğimiz için burada oluşturuyoruz.
   final WebSocketService _webSocketService = WebSocketService(
     'wss://echo.websocket.events',
   );

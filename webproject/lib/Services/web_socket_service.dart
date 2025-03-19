@@ -12,14 +12,12 @@ class WebSocketService {
     _channel = WebSocketChannel.connect(Uri.parse(url));
   }
 
-  /// Mesaj gönderme işlevi
   void sendMessage(String message) {
     if (message.isNotEmpty) {
       _channel.sink.add(message);
     }
   }
 
-  /// Servis kapatılırken veya sayfa dispose olurken
   /// soket bağlantısını düzgün şekilde kapatıyoruz.
   void dispose() {
     _channel.sink.close();

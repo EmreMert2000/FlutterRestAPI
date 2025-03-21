@@ -24,7 +24,7 @@ A comparison of **REST API** and **WebSocket API** for real-time communication i
 | **REST API** 🌍 | **WebSocket API** 🔗 |
 |--------------|----------------|
 | Best for **CRUD operations**, fetching static data | Best for **live updates**, real-time data streaming |
-| **Used in:** Social media feeds, e-commerce, news apps | **Used in:** Chat apps, stock market tracking, multiplayer gaming |
+| **Used in:** Social media feeds, e-commerce | **Used in:** Chat apps, stock market tracking, multiplayer gaming |
 
 ---
 

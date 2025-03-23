@@ -17,6 +17,22 @@ class _PostScreenState extends State<PostScreen> {
     futurePosts = apiService.fetchPosts();
   }
 
+  void updatePost(Post post) async {
+    final updatedPost = await apiService.updatePost(post);
+    if (updatedPost != null) {
+      setState(() {
+        futurePosts = apiService.fetchPosts();
+      });
+      ScaffoldMessenger.of(
+        context,
+      ).showSnackBar(SnackBar(content: Text("Post updated successfully")));
+    } else {
+      ScaffoldMessenger.of(
+        context,
+      ).showSnackBar(SnackBar(content: Text("Failed to update post")));
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -41,6 +57,17 @@ class _PostScreenState extends State<PostScreen> {
                     style: TextStyle(fontWeight: FontWeight.bold),
                   ),
                   subtitle: Text(post.body),
+                  trailing: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      IconButton(
+                        icon: Icon(Icons.edit, color: Colors.blue),
+                        onPressed: () {
+                          updatePost(post);
+                        },
+                      ),
+                    ],
+                  ),
                   onTap: () {
                     Navigator.push(
                       context,

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:restapi/View/restApiScreen.dart';
+import 'package:provider/provider.dart';
+import 'viewmodels/post_viewmodel.dart';
+import 'views/post_screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -8,6 +10,15 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(debugShowCheckedModeBanner: false, home: PostScreen());
+    return ChangeNotifierProvider(
+      create: (context) => PostViewModel(),
+      child: MaterialApp(
+        title: 'Post Uygulaması',
+        theme: ThemeData(
+          primarySwatch: Colors.blue,
+        ),
+        home: PostScreen(),
+      ),
+    );
   }
 }

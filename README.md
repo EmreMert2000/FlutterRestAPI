@@ -1,6 +1,6 @@
 # 🔄 REST API vs WebSocket API in Flutter
 
-A comparison of **REST API** and **WebSocket API** for real-time communication in **Flutter** applications.
+A comparison of **REST API** && **WebSocket API** for real-time communication in **Flutter** applications.
 
 ---
 
@@ -27,5 +27,6 @@ A comparison of **REST API** and **WebSocket API** for real-time communication i
 | **Used in:** Social media feeds, e-commerce | **Used in:** Chat apps, stock market tracking, multiplayer gaming |
 
 ---
+
 
 
